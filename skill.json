@@ -1,0 +1,26 @@
+{
+  "name": "hair-video-pipeline",
+  "description": "头等大事徐峰专用：自动剪辑+字幕+封面+飞书通知",
+  "version": "1.0.0",
+  "runtime": "python3.9",
+  "entry": "main.py",
+  "memory": 2048,
+  "timeout": 300,
+  "dependencies": ["moviepy", "pillow", "requests", "numpy"],
+  "env": [
+    "VIDEO_URL",
+    "CUT_START",
+    "CUT_END",
+    "COVER_TITLE",
+    "COVER_SUBTITLE",
+    "FEISHU_WEBHOOK",
+    "ASR_API_KEY",
+    "ASR_API_SECRET"
+  ],
+  "triggers": [
+    {
+      "type": "http",
+      "path": "/process"
+    }
+  ]
+}
